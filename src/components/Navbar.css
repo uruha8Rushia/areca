@@ -1,0 +1,160 @@
+.navbar {
+    background-color: white;
+    padding: 5px 20px; /* Compact padding for shorter navbar */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for better look */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky; /* Navbar stays on top when scrolling */
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%; /* Ensures full width */
+  }
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between logo image and text */
+    margin-left: 50px; /* Moves logo to the right */
+  }
+  
+  .logo-container img {
+    height: 65px; /* Adjusted logo height for a balanced look */
+    width: auto;
+    display: block; /* Prevents inline styles affecting the image */
+  }
+  
+  .logo-container a {
+    text-decoration: none; /* Removes underline for logo link */
+    border-bottom: none; /* Ensures no border appears */
+  }
+  
+  .navbar-links {
+    list-style: none;
+    display: flex;
+    gap: 20px; /* Adjusted spacing between navigation links */
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar-links li {
+    position: relative; /* Important for dropdown positioning */
+  }
+  
+  .navbar-links a {
+    text-decoration: none; /* Remove underline */
+    color: rgb(0, 0, 0);
+    font-size: 16px; /* Slightly reduced font size for compact spacing */
+    padding: 6px 10px; /* Compact spacing for better fit */
+    transition: color 0.3s, background-color 0.3s;
+    border-radius: 10px; /* Smooth edges */
+    border-bottom: none; /* Ensures no underline */
+  }
+  
+  .navbar-links a:hover {
+    background-color: #cacaca; /* Subtle hover effect */
+  }
+  
+  .active {
+      font-weight: bold;
+      color: white; /* Ensure text color contrasts well */
+      border-bottom: none;
+      padding: 6px 10px; /* Ensure padding matches other links */
+      border-radius: 10px; /* For smooth edges */
+  }
+  
+  /* Dropdown Menu */
+  .dropdown-menu {
+    position: absolute;
+    top: 150%; /* Position directly below parent */
+    left: 0;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Enhanced dropdown shadow */
+    list-style: none;
+    margin: 0;
+    padding: 10px 0;
+    display: block; /* Keep it in flow for animation */
+    opacity: 0; /* Start hidden */
+    transform: translateY(-10px); /* Slide up a bit initially */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth animation */
+    z-index: 2000;
+  }
+  
+  .navbar-links li:hover .dropdown-menu {
+    opacity: 1; /* Fully visible on hover */
+    transform: translateY(0); /* Reset position */
+  }
+  
+  .dropdown-menu li {
+    padding: 6px 12px; /* Reduced padding for dropdown items */
+  }
+  
+  .dropdown-menu li a {
+    text-decoration: none;
+    color: black;
+    font-size: 14px; /* Reduced font size for compact dropdown */
+    display: block;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 5px; /* Consistent with the parent links */
+  }
+  
+  .dropdown-menu li a:hover {
+    background-color: #f9f9f9; /* Consistent hover effect */
+  }
+  
+  /* Responsiveness */
+  @media (max-width: 768px) {
+    .navbar-container {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .navbar-links {
+      flex-direction: column;
+      gap: 8px; /* Adjusted for better spacing on small screens */
+      width: 100%;
+    }
+  
+    .dropdown-menu {
+      position: static; /* Align dropdown with parent on small screens */
+      box-shadow: none;
+      border: none;
+      padding: 0;
+    }
+  
+    .navbar-links a {
+      padding: 8px 15px; /* Better spacing on small screens */
+    }
+  }
+  
+  /* Adjustments for logo alignment */
+  @media (max-width: 576px) {
+    .logo-container {
+      justify-content: center;
+      margin-bottom: 5px; /* Adjust for smaller screens */
+      margin-left: 0; /* Center the logo */
+    }
+    .logo-container img {
+      height: 50px; /* Slightly smaller logo for smaller screens */
+    }
+  }
+  
+  /* Additional adjustments for hover and spacing */
+  .navbar-links a:focus {
+    outline: none; /* Removes focus outline for cleaner look */
+    background-color: #f1f1f1; /* Subtle focus effect */
+  }
+  
+  .logo-container a:hover {
+    text-decoration: none; /* Prevent underline on hover */
+    border-bottom: none; /* Remove underline when focused */
+  }
+  
