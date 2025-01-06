@@ -1,96 +1,42 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
-import './Nav.css'; // Ensure this file exists for styling
+import './Navbar.css'; // Ensure this file exists for styling
 
 const Navbar = () => {
     return (
         <nav className="navbar">
             <div className="navbar-container">
-                {/* Real Logo Section */}
+                {/* Logo Section */}
                 <div className="logo-container">
-                    <NavLink to="/" className="logo">
+                    <a href="#home" className="logo">
                         <img 
                             src="/title.jpg" // Update the path to your logo image
                             alt="Areca Logo"
                             className="logo-image"
                         />
-                    </NavLink>
+                    </a>
                 </div>
 
                 {/* Navigation Links */}
                 <ul className="navbar-links">
-                    <li className="dropdown">
-                        <NavLink
-                            to="/about"
-                            className={({ isActive }) =>
-                                isActive ? 'active' : undefined
-                            }
-                        >
+                    <li>
+                        <a href="#about" className="navbar-link">
                             About Penang
-                        </NavLink>
-                        {/* Dropdown menu */}
-                        <ul className="dropdown-menu">
-                            <li>
-                                <NavLink
-                                    to="/hotels"
-                                    className={({ isActive }) =>
-                                        isActive ? 'active' : undefined
-                                    }
-                                >
-                                    Hotels
-                                </NavLink>
-                            </li>
-                            <li>
-                                <NavLink
-                                    to="/transportation"
-                                    className={({ isActive }) =>
-                                        isActive ? 'active' : undefined
-                                    }
-                                >
-                                    Transportation
-                                </NavLink>
-                            </li>
-                            <li>
-                                <NavLink
-                                    to="/weather"
-                                    className={({ isActive }) =>
-                                        isActive ? 'active' : undefined
-                                    }
-                                >
-                                    Weather
-                                </NavLink>
-                            </li>
-                        </ul>
+                        </a>
                     </li>
                     <li>
-                        <NavLink
-                            to="/tourist-spot"
-                            className={({ isActive }) =>
-                                isActive ? 'active' : undefined
-                            }
-                        >
+                        <a href="#tourist-spot" className="navbar-link">
                             Tourist Spot
-                        </NavLink>
+                        </a>
                     </li>
                     <li>
-                        <NavLink
-                            to="/food"
-                            className={({ isActive }) =>
-                                isActive ? 'active' : undefined
-                            }
-                        >
+                        <a href="#food" className="navbar-link">
                             Food
-                        </NavLink>
+                        </a>
                     </li>
                     <li>
-                        <NavLink
-                            to="/history"
-                            className={({ isActive }) =>
-                                isActive ? 'active' : undefined
-                            }
-                        >
+                        <a href="#history" className="navbar-link">
                             Culture & History
-                        </NavLink>
+                        </a>
                     </li>
                 </ul>
             </div>
